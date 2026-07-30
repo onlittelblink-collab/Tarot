@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Oni Ethereal Tarot - Học Tarot & Trải Bài Thông Điệp</title>
+<meta name="description" content="Oni Ethereal Tarot: hãy coi Tarot là công cụ đối thoại với chính bạn. Học 78 lá bài qua lăng kính tâm lý học Carl Jung, và trải bài thông điệp để lắng nghe tiềm thức của chính mình.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Aldrich&family=Orbitron:wght@400;500;700;900&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<canvas id="stars-canvas" aria-hidden="true"></canvas>
+<img class="site-watermark" src="assets/logo/oni-logo.jpg" alt="" aria-hidden="true">
+<div class="fog-layer" aria-hidden="true"></div>
+
+<!-- ============ NAV ============ -->
+<nav id="site-nav">
+  <div class="container">
+    <a href="#hero" class="nav-wordmark">ONI <span>ETHEREAL TAROT</span></a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#academy">Học Tarot</a></li>
+      <li><a href="#reader">Trải Bài</a></li>
+      <li><a href="#contact">Liên Hệ</a></li>
+    </ul>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Mở menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ============ HERO / LANDING GATEWAY ============ -->
+<header id="hero">
+  <div class="hero-eyebrow">Oni Ethereal Tarot</div>
+  <h1 class="hero-title hero-title-white">Hãy coi Tarot là công cụ để đối thoại với chính mình</h1>
+  <p class="hero-sub">
+    Ở đây, chúng tôi không mang đến sự an ủi hay những lời phán đoán tương lai đơn thuần.
+    Chúng tôi trao cho bạn một tấm gương. Một tấm gương lạnh lùng và trung thực, đủ để bạn
+    dám nhìn thẳng vào những góc khuất, những giằng xé mà bản thân vẫn luôn né tránh.
+    Tiệm không quyết định thay bạn, chúng tôi chỉ bóc tách những thông điệp vốn đã nằm sẵn
+    bên trong bạn và khiến bạn hiểu hơn về tarot.
+  </p>
+
+  <blockquote class="hero-quote">
+    <p class="quote-original">"One does not become enlightened by imagining figures of light, but by making the darkness conscious."</p>
+    <p class="quote-translation">"Con người không đạt được sự giác ngộ bằng cách hình dung ra ánh sáng, mà bằng cách nhận thức rõ bóng tối bên trong mình."</p>
+    <footer class="quote-author">- Carl Jung</footer>
+  </blockquote>
+
+  <div class="gateway-row">
+    <a href="#academy" class="gateway-card">
+      <div class="gateway-title">Tarot Archetypes Academy</div>
+      <p class="gateway-desc">Học 78 lá bài qua các nguyên mẫu tâm lý (archetypes), bằng flashcard tương tác hai mặt.</p>
+      <div class="gateway-arrow">Bắt đầu học →</div>
+    </a>
+    <a href="#reader" class="gateway-card">
+      <div class="gateway-title">Inner Exploration</div>
+      <p class="gateway-desc">Trải bài để lắng nghe tiềm thức của chính bạn, không dự đoán tương lai, chỉ phản chiếu hiện tại.</p>
+      <div class="gateway-arrow">Trải bài ngay →</div>
+    </a>
+  </div>
+
+  <div class="scroll-hint"><div class="line"></div>CUỘN XUỐNG</div>
+</header>
+
+<!-- ============ ACADEMY (Flashcard) ============ -->
+<section id="academy">
+  <div class="container">
+
+    <!-- Man hinh dan nhap: hien truoc, bam Ke tiep moi vao noi dung hoc -->
+    <div class="flow-intro reveal" id="academy-intro">
+      <div class="eyebrow">01 · Tarot Archetypes Academy</div>
+      <h2 class="section-heading">Học Tarot</h2>
+      <p class="section-lede">
+        Mỗi lá bài là một nguyên mẫu (archetype) trong hành trình cá nhân hóa của Carl Jung.
+        Hãy chạm vào từng lá bài để xem nghĩa của từng lá.
+      </p>
+      <button class="continue-btn" id="academy-continue-btn">Kế Tiếp →</button>
+    </div>
+
+    <!-- Noi dung chinh: an mac dinh, hien sau khi bam Ke tiep -->
+    <div class="flow-main" id="academy-main" style="display:none;">
+      <div class="academy-controls reveal in-view">
+        <div class="tabs" role="tablist" aria-label="Chọn bộ bài">
+          <button class="tab-btn active" data-arcana="major">Ẩn Chính</button>
+          <button class="tab-btn" data-arcana="minor">Ẩn Phụ</button>
+        </div>
+
+        <div class="suit-filters" id="suit-filters" style="display:none;">
+          <button class="suit-chip active" data-suit="all">Tất cả</button>
+          <button class="suit-chip" data-suit="wands">Wand</button>
+          <button class="suit-chip" data-suit="cups">Cup</button>
+          <button class="suit-chip" data-suit="swords">Sword</button>
+          <button class="suit-chip" data-suit="pentacles">Pentacle</button>
+        </div>
+
+        <div class="search-wrap">
+          <input type="search" id="card-search" placeholder="Tìm theo tên lá bài, từ khoá…" aria-label="Tìm kiếm lá bài">
+        </div>
+      </div>
+
+      <div class="results-count in-view" id="results-count"></div>
+
+      <div class="card-grid in-view" id="card-grid"></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ READER (Bốc bài) ============ -->
+<section id="reader">
+  <div class="container">
+
+    <!-- Man hinh dan nhap: hien truoc, bam Ke tiep moi vao noi dung trai bai -->
+    <div class="flow-intro reveal" id="reader-intro">
+      <div class="eyebrow">02 · Inner Exploration</div>
+      <h2 class="section-heading">Trải Bài Thông Điệp</h2>
+
+      <blockquote class="hero-quote">
+        <p class="quote-original">"Aber es ist mit dem Menschen wie mit dem Baume. Je mehr er hinauf in die Höhe und ins Helle will, um so stärker streben seine Wurzeln erdwärts, abwärts, ins Dunkle, Tiefe - ins Böse."</p>
+        <p class="quote-translation">"Nhưng con người cũng giống như cây cối. Nó càng muốn vươn lên cao và ra ngoài ánh sáng, thì rễ của nó càng phải đâm sâu xuống lòng đất, xuống phía dưới, vào chỗ tăm tối, sâu thẳm - vào trong cái ác."</p>
+        <footer class="quote-author">- Friedrich Nietzsche</footer>
+      </blockquote>
+
+      <p class="section-lede">Và chúng mình mong thông điệp sau đây bạn nhận được sẽ giúp ích được cho bạn.</p>
+      <button class="continue-btn" id="reader-continue-btn">Kế Tiếp →</button>
+    </div>
+
+    <!-- Noi dung chinh: an mac dinh, hien sau khi bam Ke tiep -->
+    <div class="flow-main" id="reader-main" style="display:none;">
+      <div class="reader-question in-view">
+        <label for="reader-question">Câu hỏi của bạn là gì?</label>
+        <input type="text" id="reader-question" placeholder="Ví dụ: Điều gì tôi đang né tránh nhìn nhận về bản thân?">
+      </div>
+
+      <div class="spread-choice in-view">
+        <button class="spread-btn" data-spread="one_card">
+          <div class="spread-btn-title">Trải 1 lá - Thông điệp hôm nay</div>
+        </button>
+        <button class="spread-btn" data-spread="three_card">
+          <div class="spread-btn-title">Trải 3 lá - Thông điệp cho hiện tại</div>
+        </button>
+      </div>
+
+      <button class="draw-btn in-view" id="draw-btn" disabled>Bốc Bài</button>
+
+      <div class="deck-fan-wrap" id="deck-fan-wrap">
+        <div class="deck-fan-hint" id="deck-fan-hint"></div>
+        <div class="deck-fan" id="deck-fan"></div>
+      </div>
+
+      <div class="spread-table" id="spread-table">
+        <div class="spread-slots" id="spread-slots"></div>
+      </div>
+
+      <div class="reading-panel" id="reading-panel">
+        <div id="reading-cards"></div>
+        <div class="reading-summary">
+          <div class="reading-summary-title">Góc nhìn tổng hợp</div>
+          <p id="summary-text"></p>
+        </div>
+        <button class="reset-btn" id="reset-reading-btn">↺ Trải bài mới</button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ CONTACT / FOOTER ============ -->
+<footer id="contact">
+  <div class="container">
+    <div class="reveal">
+      <h2 class="contact-title hero-title-white">Book Lịch Tham Vấn Tarot</h2>
+      <p class="contact-sub">
+        Nếu bạn muốn book lịch tham vấn chi tiết hãy gửi tin nhắn qua các kênh dưới đây.
+      </p>
+
+      <div class="social-row">
+        <a class="social-btn" href="https://www.instagram.com/onitarot?igsh=MXdjczZyNmQ5djRiYw%3D%3D&utm_source=qr" target="_blank" rel="noopener" aria-label="Instagram Oni Ethereal Tarot">
+          <svg viewBox="0 0 24 24"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41-.56-.22-.96-.48-1.38-.9-.42-.42-.68-.82-.9-1.38-.16-.42-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41 1.27-.06 1.65-.07 4.85-.07M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63c-.79.31-1.46.72-2.13 1.39C1.35 2.68.94 3.35.63 4.14c-.3.76-.5 1.64-.56 2.91C.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.31.79.72 1.46 1.39 2.13.67.67 1.34 1.08 2.13 1.39.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56.79-.31 1.46-.72 2.13-1.39.67-.67 1.08-1.34 1.39-2.13.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91-.31-.79-.72-1.46-1.39-2.13C21.32 1.35 20.65.94 19.86.63c-.76-.3-1.64-.5-2.91-.56C15.67.01 15.26 0 12 0zm0 5.84A6.16 6.16 0 1 0 12 18.16 6.16 6.16 0 0 0 12 5.84zm0 10.16A4 4 0 1 1 12 8a4 4 0 0 1 0 8zm6.41-10.4a1.44 1.44 0 1 1-2.88 0 1.44 1.44 0 0 1 2.88 0z"/></svg>
+        </a>
+        <a class="social-btn" href="https://web.facebook.com/share/1M9KH1HfLE/?mibextid=wwXIfr&_rdc=1&_rdr" target="_blank" rel="noopener" aria-label="Facebook Oni Ethereal Tarot">
+          <svg viewBox="0 0 24 24"><path d="M22 12.06C22 6.51 17.52 2 12 2S2 6.51 2 12.06C2 17.06 5.66 21.2 10.44 22v-7.03H7.9v-2.91h2.54V9.85c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.44 2.91h-2.34V22C18.34 21.2 22 17.06 22 12.06z"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-bottom reveal">
+      <span>© Since 2024 Oni Ethereal Tarot.</span>
+      <span>Chiêm nghiệm theo trường phái Jungian & Triết học Hiện sinh [Không thay thế cho tư vấn tâm lý chuyên môn]</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
